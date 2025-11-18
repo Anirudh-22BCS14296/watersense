@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WaterSense – Public Fountain Water Quality Monitoring</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>💧 WaterSense – Public Fountain Water Quality Monitoring System</h1>
+        <p class="subtitle">
+            Real-Time Monitoring of pH, Turbidity, Temperature & TDS for Smart Fountains
+        </p>
+        <p class="sub-info">
+            Status: Live Monitoring for <strong>Fountain #1 – City Park</strong>
+        </p>
+    </header>
+
+    <!-- INFO BOX -->
+    <section class="info-box">
+        <p>
+            This dashboard displays live water quality data of public fountains.
+            The system uses IoT-based virtual sensors sending data via MQTT to the cloud,
+            processed by a Flask backend and visualized here.
+        </p>
+    </section>
+
+    <!-- PARAMETER CARDS -->
+    <h2 class="section-title">Live Water Parameters</h2>
+
+    <div class="cards">
+        <div class="card" id="phCard">pH: <span id="ph">--</span></div>
+        <div class="card" id="turbCard">Turbidity: <span id="turbidity">--</span></div>
+        <div class="card" id="tempCard">Temperature: <span id="temp">--</span></div>
+        <div class="card" id="tdsCard">TDS: <span id="tds">--</span></div>
+    </div>
+
+    <!-- ALERT BOX -->
+    <div id="alertBox" class="alert hidden">
+        Water Quality Warning: <span id="alertMsg"></span>
+    </div>
+
+    <!-- 🌟 INSERTED CHART SECTION HERE (CORRECT PLACE) -->
+    <section class="chart-section">
+        <h2 class="chart-title">📊 Water Quality Trends – Fountain #1 (City Park)</h2>
+        <p class="chart-desc">
+            Real-time variation of pH, Turbidity, Temperature, and TDS for the selected public fountain.
+            These graphs refresh automatically based on live IoT simulation data.
+        </p>
+
+        <canvas id="chart" width="800" height="300"></canvas>
+    </section>
+
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>
